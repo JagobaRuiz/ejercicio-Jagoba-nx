@@ -1,0 +1,33 @@
+{
+  "name": "ejercicio-jagoba-nx-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/ejercicio-jagoba-nx-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ejercicio-jagoba-nx-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "ejercicio-jagoba-nx:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "ejercicio-jagoba-nx:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "ejercicio-jagoba-nx:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ejercicio-jagoba-nx-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["ejercicio-jagoba-nx"]
+}
