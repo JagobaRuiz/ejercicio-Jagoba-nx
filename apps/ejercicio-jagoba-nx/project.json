@@ -20,8 +20,13 @@
           "apps/ejercicio-jagoba-nx/src/favicon.ico",
           "apps/ejercicio-jagoba-nx/src/assets"
         ],
-        "styles": ["apps/ejercicio-jagoba-nx/src/styles.scss"],
-        "scripts": []
+        "styles": [
+          "apps/ejercicio-jagoba-nx/src/styles.scss",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css"
+        ],
+        "scripts": [
+          "node_modules/bootstrap/dist/js/bootstrap.min.js"
+        ]
       },
       "configurations": {
         "production": {
