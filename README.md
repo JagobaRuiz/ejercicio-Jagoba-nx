@@ -12,10 +12,6 @@ y ejecutar el comando `nx serve ejercicio_jagoba_nx`, tras esto, en el navegador
 abriremos localhost en el puerto 4200 así: http://localhost:4200/
 
 
-## Funcionamiento de la aplicación
-
-
-
 ## Librerías de Angular utilizados en el proyecto:
 * BootStrap
 * RxJS
