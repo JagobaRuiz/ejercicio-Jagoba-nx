@@ -1,0 +1,22 @@
+<h1>Buscador de issues de GitHub - Jagoba Ruiz</h1>
+<br><br>
+<form *ngIf="mostrarFormulario" class="form-group row">
+  <div class="form-group col-md-3"></div>
+  <div class="form-group col-md-3">
+    <label for="usuario">Nombre de usuario</label>
+    <input name="usuario" class="form-control" type="text" id="usuario" placeholder="Usuario" #usuario>
+  </div>
+  <div class="form-group col-md-3">
+    <label for="repositorio">Nombre de repositorio</label>
+    <input name="repositorio" class="form-control" type="text" id="repositorio" placeholder="Repositorio" #repositorio>
+  </div>
+
+  <div class="col col-md-3">
+    <button type="button" class="btn btn-primary boton" (click)="buscar(usuario.value, repositorio.value)">Buscar</button>
+  </div>
+</form>
+<div class="gridResult js-result2">
+  <angular-monorepo-resultado-issue [incidencia]="issue" *ngFor="let issue of issues | paginate: { itemsPerPage: 7, currentPage: p } "></angular-monorepo-resultado-issue>
+</div>
+<pagination-controls class="controllerPage" (pageChange)="p = $event" *ngIf="showPage" nextLabel="Siguiente" previousLabel="Anterior"></pagination-controls>
+

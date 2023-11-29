@@ -1,0 +1,13 @@
+<div class="card col-md-12 tarjeta">
+  <img ngSrc="{{incidencia.user.avatar_url}}" width="150" height="150" class="" alt="Author-image">
+  <div class="card-body">
+    <h5 class="card-title"><b>Titulo:</b> {{incidencia.title}}</h5>
+    <p class="card-text"><b>Usuario autor:</b> {{incidencia.user.login}}</p>
+    <p class="card-text"><b>Estado: </b><span class="badge" [ngClass]="incidencia.state === 'open' ? 'badge badge-success' : 'badge badge-danger'">{{incidencia.state}}</span></p>
+    <p class="card-text"><b>Fecha de creación: </b>{{incidencia.created_at | date: 'dd/MM/yyyy'}}</p>
+    <p class="card-text"><b>Descripción: </b>{{incidencia.body | slice: 0:1000}} ...</p>
+    <a class="btn btn-primary" href="{{incidencia.html_url}}" target="_blank">Ver incidencia completa </a>
+
+  </div>
+</div>
+<br><br>
